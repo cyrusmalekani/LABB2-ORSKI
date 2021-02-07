@@ -5,10 +5,9 @@ Solution to the following problem:
 Build following functions:
 
 a. Every 10th second control if the file "/var/testfil1" has been changed.
-IF it has, write a linenumber (start on one) and a timestamp and with the message that the file has changed to a logfile in a suitable place.
+IF it has, write a linenumber (start on one) and a timestamp and with the message that - "The file has changed" - to a logfile in a suitable place.
 
-b. Everytime the log-file contains atleast 10 lines, the contents shall be appended to the end of another file, also in a suitable place.
-A bak-file, and the logfile must be emptied until the next line becomes written
+b. Everytime the log-file contains atleast 10 lines, the contents shall be appended to the end of another file, also in a suitable place - a bak-file - and the logfile must be emptied until the next line becomes written.
 
 c. Once an hour the bak-file shall be deleted.
 
