@@ -29,3 +29,21 @@ echo "*/5 * * * * /usr/bin/log_deleter.sh" | crontab
 to
 (every hour)
 echo "0 * * * * /usr/bin/log_deleter.sh" | crontab
+
+---
+
+What the script actually does is, put the necessary scripts in /usr/local/bin/
+The file to be checked is /var/testfil1
+And the logs are stored in /tmp/log/
+
+I've added a script which wasn't really necessary for the actual excersize called file_changer.sh, that appends incrementing numbers to /var/testfil1 - this is for testing purposes.
+
+So basically file_checker.sh checks every 10 seconds if /var/testfil1 has been changed.
+IF it has - it makes a log (line#, timestamp, message) in /tmp/log/test1.log
+WHEN it has reached 10 lines, it then empties /tmp/log/test1.log and appends the data that was in it to /tmp/log/log_test1.bak
+Every 5th minute (that's the schedualed demo time - but excersize says an hour) there's a crontab job that get's run, it runs log_deleter.sh
+Which just removes and makes the file again with correct permissions.
+
+---
+
+There's room for a lot of improvement but slow and steady wins the race! :D
