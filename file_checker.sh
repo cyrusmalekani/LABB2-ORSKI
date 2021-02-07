@@ -22,10 +22,10 @@ do
         if [ $rad = "0" ]
         then
             echo 'Log empty, makeing line #1'
-            echo "1 $(date)" > /tmp/log/test1.log
+            echo "1 $(date) - The file has been changed" > /tmp/log/test1.log
         else
             echo "Appending line#: $(($rad+1))"
-            echo "$(($rad+1)) $(date)" >> /tmp/log/test1.log
+            echo "$(($rad+1)) $(date) - The file has been changed" >> /tmp/log/test1.log
         fi
     echo '#############################'
     fi
