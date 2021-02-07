@@ -1,11 +1,10 @@
 #!/bin/bash
-
-changed=$(stat --format=%Z /var/testfil1)
+source common.sh
 
 while [ 1 ]
 do
-    echo ' '
     new_change=$(stat --format=%Z /var/testfil1)
+    echo ' '
     if [ $changed -eq $new_change ]
     then
         echo '### NO CHANGE ###'
@@ -17,16 +16,16 @@ do
         echo current $changed
         echo change $new_change
         changed=$new_change
-        rad=$(tail -1 /tmp/log/test1.log | cut -f1 -d ' ')
+	rad=$(cat /tmp/log/test1.log | wc -l)
         echo 'Last line number in log:' $rad
 
-        if [ -z '$rad' ]
+        if [ $rad = "0" ]
         then
             echo 'Log empty, makeing line #1'
-            echo '1 $(date)' > /tmp/log/test1.log
+            echo "1 $(date)" > /tmp/log/test1.log
         else
-            echo 'Appending line#:' $(($rad+1))
-            echo '$(($rad+1)) $(date)' >> /tmp/log/test1.log
+            echo "Appending line#: $(($rad+1))"
+            echo "$(($rad+1)) $(date)" >> /tmp/log/test1.log
         fi
     echo '#############################'
     fi

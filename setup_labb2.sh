@@ -13,10 +13,10 @@ touch /var/testfil1
 touch /tmp/log/test1.log
 touch /tmp/log/log_test1.bak
 
-echo '# Copying files in current directory to /usr/bin/ #'
+echo '# Copying files in current directory to /usr/local/bin/ #'
 cp ./file_checker.sh /usr/local/bin/file_checker.sh
 cp ./file_changer.sh /usr/local/bin/file_changer.sh
-cp ./log_chkr.sh /usr/bin/local/log_chkr.sh
+cp ./log_chkr.sh /usr/local/bin/log_chkr.sh
 cp ./log_deleter.sh /usr/local/bin/log_deleter.sh
 
 echo '# Changing rights on scripts and logs#'
