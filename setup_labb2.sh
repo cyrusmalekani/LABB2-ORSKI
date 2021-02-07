@@ -1,5 +1,6 @@
 #!/bin/bash
 # Script for setting up and running LABB2
+# Written by Cyrus Malekani 2021
 
 if [ $(id -u) != "0" ]; then
 echo "You must be the superuser to run this script" >&2
