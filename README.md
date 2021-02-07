@@ -1,8 +1,7 @@
 # LABB2 med ORSKI
 
 Solution to the following problem:
-
-1. Build following functions
+Build following functions:
 
 a. Every 10th second control if the file "/var/testfil1" has been changed.
 IF it has, write a linenumber (start on one) and a timestamp and with the message that the file has changed to a logfile in a suitable place.
