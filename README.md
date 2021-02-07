@@ -1,4 +1,4 @@
-# ORSKI-LINUX
+# LABB2 med ORSKI
 Labb2 i Linux med ORSKI
 
 Extract and set execution rights for setup_labb2.sh;
