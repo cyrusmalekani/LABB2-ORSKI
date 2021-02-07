@@ -8,10 +8,10 @@ exit 1
 fi
 
 echo '# Creating necessary log/test-files and directories #'
-mkdir /usr/log/
+mkdir /tmp/log/
 touch /var/testfil1
-touch /usr/log/test1.log
-touch /usr/log/log_test1.bak
+touch /tmp/log/test1.log
+touch /tmp/log/log_test1.bak
 
 echo '# Copying files in current directory to /usr/bin/ #'
 cp ./file_checker.sh /usr/local/bin/file_checker.sh
@@ -20,19 +20,19 @@ cp ./log_chkr.sh /usr/bin/local/log_chkr.sh
 cp ./log_deleter.sh /usr/local/bin/log_deleter.sh
 
 echo '# Changing rights on scripts and logs#'
-chmod 755 /usr/bin/file_checker.sh
-chmod 755 /usr/bin/file_changer.sh
-chmod 755 /usr/bin/log_chkr.sh
-chmod 755 /usr/bin/log_deleter.sh
-chmod 777 /usr/log/test1.log
-chmod 777 /usr/log/log_test1.bak
+chmod 755 /usr/local/bin/file_checker.sh
+chmod 755 /usr/local/bin/file_changer.sh
+chmod 755 /usr/local/bin/log_chkr.sh
+chmod 755 /usr/local/bin/log_deleter.sh
+chmod 777 /tmp/log/test1.log
+chmod 777 /tmp/log/log_test1.bak
 chmod 777 /var/testfil1
 
 echo '# Adding root cronjob (default every 5 minutes) #'
-echo '*/5 * * * * /usr/bin/log_deleter.sh' | crontab
+echo '*/5 * * * * /usr/local/bin/log_deleter.sh' | crontab
 
 echo '# Done setting up for LABB 2 #'
 
 echo '# Running scripts with parallel - sending outpout to stdout #'
 echo '# Use CTRL-C to stop all scripts running #'
-(trap 'kill 0' SIGINT; /usr/bin/file_checker.sh & /usr/bin/file_changer.sh)
+(trap 'kill 0' SIGINT; /usr/local/bin/file_checker.sh & /usr/local/bin/file_changer.sh)
