@@ -16,13 +16,13 @@ c. Once an hour the bak-file shall be deleted.
 
 Installation instructions:
 
-Extract and set execution rights for setup_labb2.sh;
+Extract and run setup_labb2.sh with sudo rights.
 
-ex. sudo chmod 777 ./setup_labb2.sh
+$ sudo ./setup_labb2.sh
 
 everything should be set up correctly.
 
-PS. the cron job is set to execute every 5 minutes but the lab expects an hour, just change the first argument in the cronjob to 0
+PS. the cron job is set to execute every 5 minutes but the lab expects an hour, just change the first argument in the cronjob to 0 in setuo_labb2.sh
 
 I.E. 
 (every 5 minutes)
