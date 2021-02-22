@@ -13,11 +13,15 @@ do
         #echo old_change $old_change
         #echo new_change $new_change
         echo '#################'
+        echo ''
     else
+        echo ''
+        echo '##########################################'
         echo '### !!! /var/testtfil1 has changed !!! ###'
         echo "       old change $old_change             "
         echo "       new change $new_change             "
         echo "##########################################"
+        echo ''
 
 		old_change=$new_change
 		rad=$(cat /tmp/log/labb2.log | wc -l)
@@ -26,6 +30,8 @@ do
 
         if [ "$rad" = "0" ]
         then
+            echo ''
+            echo '###############################################'
             echo '#      Log empty, starting from line #1       #'
             echo "1 $(date) - The file has been changed" > /tmp/log/labb2.log
         else
@@ -33,6 +39,7 @@ do
             echo "$(($rad+1)) $(date) - The file has been changed" >> /tmp/log/labb2.log
         fi
             echo '###############################################'
+            echo ''
     fi
     /usr/local/bin/log_chkr.sh
     sleep 10
