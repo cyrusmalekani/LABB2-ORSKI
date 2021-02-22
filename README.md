@@ -15,7 +15,10 @@ c. Once an hour the bak-file shall be deleted.
 
 Installation instructions:
 
+(install mplayer for added bonus!)
+
 Extract and run setup_labb2.sh with sudo rights.
+
 
 $ sudo ./setup_labb2.sh
 
@@ -25,10 +28,10 @@ PS. the cron job is set to execute every 5 minutes but the lab expects an hour, 
 
 I.E. 
 (every 5 minutes)
-echo "*/5 * * * * /usr/local/bin/log_deleter.sh" | crontab 
+echo "*/5 * * * * /usr/local/bin/bak_del.sh" | crontab 
 to
 (every hour)
-echo "0 * * * * /usr/local/bin/log_deleter.sh" | crontab
+echo "0 * * * * /usr/local/bin/bak_del.sh" | crontab
 
 ---
 
@@ -40,8 +43,8 @@ I've added a script which wasn't really necessary for the actual excersize calle
 
 So basically file_checker.sh checks every 10 seconds if /var/testfil1 has been changed.
 IF it has - it makes a log (line#, timestamp, message) in /tmp/log/labb2.log
-WHEN it has reached 10 lines, it then empties /tmp/log/test1.log and appends the data that was in it to /tmp/log/labb.bak
-Every 5th minute (that's the schedualed demo time - but excersize says an hour) there's a crontab job that get's run, it runs log_deleter.sh
+WHEN it has reached 10 lines, it then empties /tmp/log/labb2.log and appends the data that was in it to /tmp/log/labb2.bak
+Every 5th minute (that's the schedualed demo time - but excersize says an hour) there's a crontab job that get's run, it runs bak_del.sh
 Which just removes and makes the file again with correct permissions.
 
 ---
