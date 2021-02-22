@@ -4,7 +4,7 @@ echo "# Written by ##################################"
 echo "# Cyrus Malekani, Victor Åhgren, Niklas Gerdin#"
 echo "# Christopher , Marcus Petsén -  2021         #" 
 echo "###############################################"
-echo ""
+echo ''
 
 if [ $(id -u) != "0" ]; then
 echo 'You must be the superuser to run this script' >&2
