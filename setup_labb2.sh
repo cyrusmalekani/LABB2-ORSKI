@@ -5,7 +5,7 @@ printf "\033c"
 
 
 echo "############ Written by ##################################"
-echo "#     ${red}Cyrus Malekani${nc}, ${blu}Victor Åhgren${nc}, ${yel}Niklas Gerdin${nc}       #"
+echo "#     ${red}Cyrus Malekani${nc}, ${blu}Victor Åhgren${nc}, ${yel}Niclas Gerdin${nc}       #"
 echo "#  ${pin}Christopher Forsgren${nc} , ${gre}Marcus Petsén${nc} -  2021 - IT20S  #" 
 echo "##########################################################"
 sleep 5
