@@ -2,7 +2,7 @@
 # Script for setting up and running LABB2
 source common.sh
 printf "\033c"
-
+nohup mplayer ./lets_get_crazy.mp3 > /dev/null 2>&1 &
 
 echo "############ Written by ##################################"
 echo "#     ${red}Cyrus Malekani${nc}, ${blu}Victor Åhgren${nc}, ${yel}Niklas Gerdin${nc}       #"
