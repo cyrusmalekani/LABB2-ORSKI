@@ -27,3 +27,7 @@ arr[2]=$red
 arr[3]=$gre
 arr[4]=$blu
 arr[5]=$pin
+arr[6]=$BIYellow
+arr[7]=$BIBlue
+arr[8]=$BIPurple
+arr[9]=$BICyan
