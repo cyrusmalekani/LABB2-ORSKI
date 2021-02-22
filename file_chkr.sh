@@ -4,7 +4,6 @@ color=0
 
 while [ 1 ]
 do
-    #echo 'Executing Loop'
     new_change=$(stat -t --format=%.19z /var/testfil1)
     echo ''
     if [ "$old_change" = "$new_change" ]
@@ -20,7 +19,6 @@ do
         printf "${arr[$color]}"
         echo '         ##########################################'
         echo '         #   !!! /var/testtfil1 has changed !!!   #'
-        #printf "%.1f\n" "old change" $old_change "new change" $new_change
         echo "         #     old change $old_change     #"
         echo "         #     new change $new_change     #"
         echo "         ##########################################"
@@ -29,8 +27,6 @@ do
         color=$(($color+1))
 		old_change=$new_change
 		rad=$(cat /tmp/log/labb2.log | wc -l)
-
-        #echo '### Last line number in log:' $rad '###'
 
         if [ "$rad" = "0" ]
         then
