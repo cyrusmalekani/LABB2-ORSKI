@@ -6,20 +6,15 @@ printf "\033c"
 
 echo "############ Written by ##################################"
 echo "#     ${red}Cyrus Malekani${nc}, ${blu}Victor Åhgren${nc}, ${yel}Niklas Gerdin${nc}       #"
-echo "#     ${pin}Christopher${nc} , ${gre}Marcus Petsén${nc} -  2021 - IT20S        #" 
+echo "#  ${pin}Christopher Forsgren${nc} , ${gre}Marcus Petsén${nc} -  2021 - IT20S  #" 
 echo "##########################################################"
-sleep 10
-nohup mplayer ./lets_get_crazy.mp3 > /dev/null 2>&1 &
-echo ''
-echo ''
-echo "         ***    Let's go ${blink} ${bol} ${red} C ${gre} R ${yel} A ${blu} Z ${pin} Y    ${nc} ***                "
-echo ''
-echo ''
-
+sleep 5
 if [ $(id -u) != "0" ]; then
 echo 'You must be the superuser to run this script' >&2
 exit 1
 fi
+echo ''
+echo ''
 echo '##########################################################'
 echo '#   Creating necessary log/test-files and directories    #'
 mkdir /tmp/log/
@@ -50,4 +45,13 @@ echo '#                                                        #'
 echo '# Running scripts in parallel - sending output to stdout #'
 echo '#        Use CTRL-C to stop all scripts running          #'
 echo '##########################################################'
+echo ''
+sleep 5
+echo ''
+echo ''
+echo "       ***    Let's go ${blink} ${bol} ${red} C ${gre} R ${yel} A ${blu} Z ${pin} Y    ${nc} ***                "
+echo ''
+echo ''
+
+nohup mplayer ./lets_get_crazy.mp3 > /dev/null 2>&1 &
 (trap 'kill 0' SIGINT; /usr/local/bin/file_chkr.sh & /usr/local/bin/file_changer.sh)

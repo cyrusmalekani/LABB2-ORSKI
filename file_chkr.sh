@@ -5,7 +5,6 @@ color=0
 while [ 1 ]
 do
     new_change=$(stat -t --format=%.19z /var/testfil1)
-    echo ''
     if [ "$old_change" = "$new_change" ]
     then
         printf "${arr[$color]}"
@@ -31,7 +30,6 @@ do
         if [ "$rad" = "0" ]
         then
             printf "${arr[$color]}"
-            echo ''
             echo '      ###############################################'
             echo '      #      Log empty, starting from line #1       #'
             echo "1 $(date) - The file has been changed" > /tmp/log/labb2.log
@@ -43,7 +41,8 @@ do
             echo '##########################################################'
             echo "        Appending line#: $(($rad+1)) to /tmp/log/labb2.bak  "
             echo '##########################################################'
-            if [ $(($rad+1)) -eq 6 ]
+            echo ''
+			if [ $(($rad+1)) -eq 6 ]
             then
                 sleep 4
                 echo ''
