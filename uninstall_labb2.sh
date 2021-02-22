@@ -1,6 +1,6 @@
 #!/bin/bash
 printf "\033c"
-
+source common.sh
 
 if [ $(id -u) != "0" ]; then
 echo 'You must be the superuser to run this script' >&2
@@ -20,6 +20,6 @@ rm -r /tmp/log
 crontab -l -u root | grep -v bak_del.sh | crontab -u root -
 echo '#        Removed job from crontab          #'
 echo '#       Uninstallation finished ...        #'
-echo '#                 ***                      #'
-echo '#        Thank you, come again !           #'
+echo '#                   ***                    #'
+echo "#         ${red} ${bol}Thank ${pin}you,${blink} ${blu}come ${yel}again ${gre}!${nc}         #"
 echo '############################################'
