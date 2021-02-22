@@ -47,9 +47,20 @@ do
             echo '##########################################################'
             echo "        Appending line#: $(($rad+1)) to /tmp/log/labb2.bak  "
             echo '##########################################################'
+            if [ $(($rad+1)) -eq 6 ]
+            then
+                sleep 4
+                echo ''
+                echo ''
+                echo "                        ${red}OH ${pin} ${blink} ${bol} YEAH! ${nc}"
+                echo ''
+                echo ''
+            fi
+
             echo "${nc}"
             echo "$(($rad+1)) $(date) - The file has been changed" >> /tmp/log/labb2.log
             color=$(($color+1))
+            
         fi
     fi
 
