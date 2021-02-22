@@ -9,7 +9,7 @@ do
     if [ $old_change -eq $new_change ]
     then
         echo '#################'
-	echo '### NO CHANGE ###'
+	    echo '### NO CHANGE ###'
         #echo old_change $old_change
         #echo new_change $new_change
         echo '#################'
@@ -26,13 +26,13 @@ do
 
         if [ "$rad" = "0" ]
         then
-            echo 'Log empty, starting from line #1'
+            echo '#      Log empty, starting from line #1       #'
             echo "1 $(date) - The file has been changed" > /tmp/log/labb2.log
         else
-            echo "Appending line#: $(($rad+1))"
+            echo "#       Appending line#: $(($rad+1))          #"
             echo "$(($rad+1)) $(date) - The file has been changed" >> /tmp/log/labb2.log
         fi
-    echo '###########################################'
+            echo '###############################################'
     fi
     /usr/local/bin/log_chkr.sh
     sleep 10
