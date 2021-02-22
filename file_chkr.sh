@@ -55,6 +55,13 @@ do
                 echo "                        ${red}OH ${pin} ${blink} ${bol} YEAH! ${nc}"
                 echo ''
                 echo ''
+                sleep 2
+                echo "############ Written by ##################################"
+                echo "#     ${red}Cyrus Malekani${nc}, ${blu}Victor Åhgren${nc}, ${yel}Niklas Gerdin${nc}       #"
+                echo "#     ${pin}Christopher${nc} , ${gre}Marcus Petsén${nc} -  2021 - IT20S        #" 
+                echo "##########################################################"
+                echo ''
+                echo '' 
             fi
 
             echo "${nc}"
